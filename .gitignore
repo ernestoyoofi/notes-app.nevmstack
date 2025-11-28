@@ -1,0 +1,8 @@
+/backend/node_modules
+/backend/.env
+/frontend/.vscode
+/frontend/dist
+/frontend/node_modules
+/docker-compose-sh.yml
+/docker-compose-dev.yml
+/docker-compose-ch.yml

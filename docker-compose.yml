@@ -1,0 +1,37 @@
+version: "3.8"
+services:
+  database:
+    image: mongodb/mongodb-community-server:8.2-ubi9
+    container_name: notes-app-nevmstack-mongodb
+    restart: always
+    environment:
+      - "MONGODB_INITDB_ROOT_USERNAME=notes-appnevimstack" # PLEASE CHANGE
+      - "MONGODB_INITDB_ROOT_PASSWORD=notes-appnevimstack" # PLEASE CHANGE
+    volumes:
+      - notes-app-nevmstack-mongodb:/data/db
+    networks:
+      - notes-app-nevmstack
+
+  app:
+    image: ernestoyoofi/notes-app.nevmstack:latest
+    restart: always
+    ports:
+      # Exposes Port
+      - 3002:80
+    environment:
+      # Database (FOLLOWING STACK)
+      - "MONGODB_URI=mongodb://notes-appnevimstack:notes-appnevimstack@database:27017/nevmstack-notes-app?authSource=admin" # PLEASE CHANGE
+      # Server (REQUIRE)
+      - "JSONWEBTOKEN_SECRET_KEY=TOKENTOKENTOKEN!!!" # PLEASE CHANGE
+      # Google OAuth (REQUIRED)
+      - "GOOGLE_CLIENT_ID=XXXXXXXX-XXXXXXX.apps.googleusercontent.com" # PLEASE CHANGE
+      - "GOOGLE_CLIENT_SECRET=GOCS-XXXXXXXX" # PLEASE CHANGE
+      - "GOOGLE_REDIRECT=http://localhost:3002/api/v1/oauth/callback" # > URL Proxy Backend # PLEASE CHANGE
+    networks:
+      - notes-app-nevmstack
+
+volumes:
+  notes-app-nevmstack-mongodb:
+
+networks:
+  notes-app-nevmstack:

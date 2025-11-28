@@ -1,0 +1,10 @@
+/backend/node_modules
+/backend/.env
+/backend/.env.example
+/frontend/.vscode
+/frontend/dist
+/frontend/node_modules
+/.dockerignore
+/.gitignore
+/docker-compose.yml
+/docker-compose-sh.yml
