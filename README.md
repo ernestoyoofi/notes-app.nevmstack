@@ -1,4 +1,4 @@
-# 📝 Notes App With NEVM Stack
+# Notes App With NEVM Stack
 
 A simple, challenge-driven project for recording text-based notes utilizing the **NEVM Stack**. This application serves as a practical exercise to explore the capabilities of **Vue.js** and enhance **Node.js** backend skills.
 
