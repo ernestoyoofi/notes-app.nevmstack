@@ -4,7 +4,7 @@ A simple, challenge-driven project for recording text-based notes utilizing the 
 
 ## 🛠️ Technologies Used
 
-This project is built using the **NEVM Stack** (Near-Ethereum Virtual Machine) components, along with modern web technologies
+This project is built using the **NEVM Stack** (Node, Express.js, Vue.js and Mongodb) components, along with modern web technologies
 
 ![Nodejs](https://img.shields.io/badge/Node.js-333333?style=for-the-badge&logo=node.js&logoColor=6da65e)
 ![Express](https://img.shields.io/badge/Express-white?style=for-the-badge&logo=express&logoColor=black)
@@ -41,7 +41,13 @@ Ensure you have the following installed:
    docker build -t ernestoyoofi/notes-app.nevmstack .
    ```
 
-3. **Configure Environment:**
+   Or using image on [Docker Hub](https://hub.docker.com/r/ernestoyoofi/notes-app.nevmstack)
+
+   ```
+   docker pull ernestoyoofi/notes-app.nevmstack:latest
+   ```
+
+4. **Configure Environment:**
 
    Open the `docker-compose.yml` file and adjust any necessary environment variables for the NEVM connection (e.g., API keys, port mappings, etc.).
 
@@ -90,7 +96,7 @@ Ensure you have the following installed:
      notes-app-nevmstack:
    ```
 
-4. **Run the application with Docker Compose:**
+5. **Run the application with Docker Compose:**
 
    The `-d` flag runs the containers in detached (background) mode.
 
@@ -98,9 +104,9 @@ Ensure you have the following installed:
    docker compose up -d
    ```
 
-5. **Access the application:**
+6. **Access the application:**
 
-   Open your web browser and navigate to the specified URL (usually `http://localhost [PORT_NUMBER]`, check your `docker-compose.yml` for the port).
+   Open your web browser and navigate to the specified URL (usually `http://localhost:[PORT]`, check your `docker-compose.yml` for the port).
 
 ## 🎯 Project Goals
 
